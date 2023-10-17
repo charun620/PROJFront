@@ -1,0 +1,33 @@
+<!-- books.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Warehouse</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <h1></h1>
+  <table class="book-table">
+    <tr>
+      <th>Company</th>
+      <th>Actions</th>
+    </tr>
+    <tr>
+      <th>Product</th>
+    </tr>
+    <% for(var i=0; i < books.length; i++) { %>
+    <tr>
+      <td><%= books[i].title %></td>
+      <td><%= books[i].author %></td>
+      <td>
+        <a href="/book/<%= books[i].id %>">View</a>
+        <a href="/update/<%= books[i].id %>">Edit</a>
+      </td>
+    </tr>
+    <% } %>
+  </table>
+  <div class="link-center">
+    <a href="/create">Create New Book</a>
+  </div>
+</body>
+</html>

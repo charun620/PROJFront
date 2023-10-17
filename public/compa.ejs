@@ -1,0 +1,14 @@
+<html>
+  <body>
+    <h1>Companies</h1>
+    <ul>
+      <% companies.forEach(company => { %>
+        <li>
+          Company ID: <%= company.CompanyID %><br>
+          Company Name: <%= company.CompanyName %><br>
+          Company Quantity: <%= company.CompanyQuantity %><br>
+        </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>

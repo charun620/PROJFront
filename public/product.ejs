@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <h1>Products</h1>
+    <ul>
+      <% products.forEach(product => { %>
+        <li>
+          Product ID: <%= product.ProductID %><br>
+          Product Name: <%= product.ProductName %><br>
+          Company ID: <%= product.CompanyID %><br>
+          Stock Quantity: <%= product.StockQuantity %><br>
+        </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
