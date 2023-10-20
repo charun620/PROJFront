@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create New Company</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <h1>Create New Company</h1>
+  <form action="/companies/create" method="POST">
+    <label for="CompanyID">Company ID:</label>
+    <input type="text" id="CompanyID" name="CompanyID" required><br>
+
+    <label for="CompanyName">Company Name:</label>
+    <input type="text" id="CompanyName" name="CompanyName" required><br>
+
+    <button type="submit">Create Company</button>
+  </form>
+</body>
+</html>
