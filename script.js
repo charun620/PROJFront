@@ -3,8 +3,8 @@ const axios = require("axios");
 const app = express();
 const path = require("path");
 var BodyParser = require("body-parser");
-const base_url = "http://localhost:3000";
-// const base_url = "http://node52307-chern.proen.app.ruk-com.cloud/warehouse;
+// const base_url = "http://localhost:3000";
+const base_url = "http://https://projectjs--chr9029.repl.co/";
 
 app.set("views", path.join(__dirname, "/public/views"));
 app.set("view engine", "ejs");
@@ -13,7 +13,7 @@ app.use(BodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(__dirname + "/public"));
 
-app.get("/warehouse", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     const products = await axios.get(`${base_url}/products`);
     const companies = await axios.get(`${base_url}/companies`);
