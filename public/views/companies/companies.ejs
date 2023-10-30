@@ -10,6 +10,7 @@
       <tr>
         <th>Company ID</th>
         <th>Company Name</th>
+        <th>Company Quantity</th>
         <th>Actions</th>
       </tr>
       <% companies.forEach(companies => { %>
@@ -24,6 +25,12 @@
             <span><%= companies.CompanyName %></span>
           </li>
         </td>
+        <td>
+          <li>
+            <span><%= companies.CompanyQuantity %></span>
+          </li>
+        </td>
+        <td>
         <td>
           <a href="/companies/edit/<%= companies.CompanyID%>">Edit</a>
           <a href="/companies/delete/<%= companies.CompanyID%>">Delete</a>

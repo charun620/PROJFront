@@ -12,16 +12,17 @@
         <tr>
             <th>Product ID</th>
             <th>ProductName</th>
+            <th>Product Quantity</th>
             <th>Actions</th>
           </tr>
           <tr>
                 <% products.forEach(product => { %>
-                        <li>
+                      
                             <tr><td><span><%= product.ProductID %></span></td>
-                                <td><span><%= product.ProductName %></span>
+                                <td><span><%= product.ProductName %></span></td>
+                                <td><span><%= product.StockQuantity %></span></td>
                             <td> <a href="/products/edit/<%= product.ProductID %>">Edit</a>
                            <a href="/products/delete/<%= product.ProductID %>">Delete</a></td>
-                        </li>
                 <% }); %>
         </tr>
     </tr>
