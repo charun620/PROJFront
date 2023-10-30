@@ -8,16 +8,25 @@
     <h1>Product Management</h1>
 
     <h2>Product List</h2>
-    <ul>
-        <% products.forEach(product => { %>
-            <li>
-                <span><%= product.ProductName %></span>
-                <a href="/products/edit/<%= product.ProductID %>">Edit</a>
-                <a href="/products/delete/<%= product.ProductID %>">Delete</a>
-            </li>
-        <% }); %>
-    </ul>
-
-    <a href="/products/add">Add New Product</a>
+    <table class="company-table">
+        <tr>
+            <th>Product ID</th>
+            <th>ProductName</th>
+            <th>Actions</th>
+          </tr>
+          <tr>
+                <% products.forEach(product => { %>
+                        <li>
+                            <tr><td><span><%= product.ProductID %></span></td>
+                                <td><span><%= product.ProductName %></span>
+                            <td> <a href="/products/edit/<%= product.ProductID %>">Edit</a>
+                           <a href="/products/delete/<%= product.ProductID %>">Delete</a></td>
+                        </li>
+                <% }); %>
+        </tr>
+    </tr>
+    </table>
+    <a href="/products/Add">Add New Product</a>
+    <a href="/warehouse">Back to Warehouse</a>
 </body>
 </html>

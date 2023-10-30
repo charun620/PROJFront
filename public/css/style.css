@@ -26,13 +26,13 @@ body {
   
   th {
     background-color: #1463b1;
-    color: white;
+    color: rgb(196, 157, 89);
     font-weight: 600;
     text-transform: uppercase;
   }
   
   tr:nth-child(even) {
-    background-color: #8f2929;
+    background-color: #ada4f5;
   }
   
 /* Style the form */
@@ -56,7 +56,7 @@ form {
     box-sizing: border-box;
     border-radius: 5px;
     border: none;
-    background-color: #ffffff;
+    background-color: #b1eab1;
   }
   
   input[type="submit"] {
@@ -107,7 +107,7 @@ form {
   }
 
 /* Style the table */
-.book-table {
+.company-table {
     border-collapse: collapse;
     width: 75%;
     margin: 0 auto; /* center the table */

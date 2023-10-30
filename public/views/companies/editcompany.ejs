@@ -6,13 +6,9 @@
 </head>
 <body>
   <h1>Edit Company</h1>
-  <form action="/companies/edit/<%= Company._id %>" method="POST">
-    <label for="CompanyID">Company ID:</label>
-    <input type="text" id="CompanyID" name="CompanyID" value="<%= Company.CompanyID %>" required><br>
-
+  <form action="/companies/<%= companies.CompanyID %>" method="POST">
     <label for="CompanyName">Company Name:</label>
-    <input type="text" id="CompanyName" name="CompanyName" value="<%= Company.CompanyName %>" required><br>
-
+    <input type="text" id="CompanyName" name="CompanyName" value="<%= companies.CompanyName %>" required><br>
     <button type="submit">Save Changes</button>
   </form>
 </body>

@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Company Page</title>
-  <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-  <h1>Company Details</h1>
-  <table class="company-table">
-    <tr>
-      <th>Company ID</th>
-      <th>Company Name</th>
-      <th>Actions</th>
-    </tr> 
-    <% for(var i=0; i < Company.length; i++) { %>
-    <tr>
-      <td><%= Company[i].CompanyID %></td>
-      <td><%= Company[i].CompanyName %></td>
-      <td>
-        <a href="/companies/<%= Company[i].CompanyID %>">View</a>
-        <a href="/companies/edit/<%= Company[i].CompanyID%>">Edit</a>
-        <a href="/companies/delete/<%= Company[i].CompanyID%>">Delete</a>
-      </td>
-    </tr>
-    <% } %>
-  </table>
-  <div class="link-center">
-    <a href="/companies/create">Create New Company</a>
-  </div>
-</body>
+  <head>
+    <title>Company Page</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <h1>Company Details</h1>
+    <table class="company-table">
+      <tr>
+        <th>Company ID</th>
+        <th>Company Name</th>
+        <th>Actions</th>
+      </tr>
+      <% companies.forEach(companies => { %>
+      <tr>
+        <td>
+          <li>
+            <span><%= companies.CompanyID %></span>
+          </li>
+        </td>
+        <td>
+          <li>
+            <span><%= companies.CompanyName %></span>
+          </li>
+        </td>
+        <td>
+          <a href="/companies/edit/<%= companies.CompanyID%>">Edit</a>
+          <a href="/companies/delete/<%= companies.CompanyID%>">Delete</a>
+        </td>
+      </tr>
+      <% }); %>
+    </table>
+    <div class="link-center">
+      <a href="/companies/create">Create New Company</a>
+      <a href="/warehouse">Back to Warehouse</a>
+    </div>
+  </body>
 </html>

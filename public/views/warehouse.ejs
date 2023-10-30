@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Company Details</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-  <nav>
-    <ul class="nav-links">
-        <li><a href="/viewCompanies">View Companies</a></li>
-        <li><a href="/addCompany">Add Company</a></li>
-        <li><a href="/editCompany">Edit Company</a></li>
-        <li><a href="/deleteCompany">Delete Company</a></li>
-        <li><a href="/viewProducts">View Products</a></li>
-        <li><a href="/addProduct">Add Product</a></li>
-        <li><a href="/editProduct">Edit Product</a></li>
-        <li><a href="/deleteProduct">Delete Product</a></li>
-    </ul>
-</nav>
-
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
     <h1>Company Details</h1>
     <table class="company-table">
-        <tr>
-            <th>Company Name</th>
-            <th>Company Stock</th>
-            <th>Product Name</th>
-        </tr>
-        <% for(var i=0; i < companies.length; i++) { %>
-            <tr>
-                <td><%= companies[i].CompanyName %></td>
-                <td><%= companies[i].CompanyStock %></td>
-                <td><%= companies[i].Product.Name %></td>
-            </tr>
-        <% } %>
+      <tr>
+        <th>Company Name</th>
+        <th>Company Stock</th>
+        <th>Product Name</th>
+      </tr>
+      <% for(var i=0; i < companies.length; i++) { %>
+      <tr>
+        <td><%= companies[i].CompanyName %></td>
+        <td><%= companies[i].CompanyQuantity %></td> 
+        <td><%= companies[i].Product ? companies[i].ProductName : 'N/A' %></td>
+          <% } %>
+      </tr>
+      <nav>
     </table>
-</body>
+    <ul class="nav-links">
+        <li><a href="/companies">View Companies</a></li>
+        <li><a href="/companies/create">Add Company</a></li>
+        <li><a href="/products">View Products</a></li>
+        <li><a href="/products/Add">Add Product</a></li>
+      </ul>
+    </nav>
+  </body>
 </html>
