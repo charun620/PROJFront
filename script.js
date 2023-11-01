@@ -4,7 +4,7 @@ const app = express();
 const path = require("path");
 var BodyParser = require("body-parser");
 const base_url = "http://localhost:3000";
-// const base_url = "http://https://projectjs--chr9029.repl.co/";
+// const base_url = "http://https://projectjs--chr9029.repl.co";
 
 app.set("views", path.join(__dirname, "/public/views"));
 app.set("view engine", "ejs");
@@ -17,10 +17,11 @@ app.get("/", async (req, res) => {
   try {
     const products = await axios.get(`${base_url}/products`);
     const companies = await axios.get(`${base_url}/companies`);
-
+    const ProCompRelation = await axios.get(`${base_url}/companyrelations`)
     res.render("warehouse", {
       products: products.data,
       companies: companies.data,
+      ProCompRelation: ProCompRelation.data,
     });
   } catch (error) {
     console.error(error);
