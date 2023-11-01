@@ -8,16 +8,37 @@
     <h1>Warehouse Details</h1>
     <table class="company-table">
       <tr>
+        <th>Company ID</th>
         <th>Company Name</th>
         <th>Company Stock</th>
         <th>Product Name</th>
       </tr>
       <% for(var i=0; i < companies.length; i++) { %>
       <tr>
+        <td><%= companies[i].CompanyID %></td>
         <td><%= companies[i].CompanyName %></td>
         <td><%= companies[i].CompanyQuantity %></td> 
-        <td><%= companies[i].Product ? companies[i].ProductName : 'N/A' %></td>
+        <td>
+          <% for (let ix = 0; ix < products.length; ix++) { %>
+
+
+            <% let uniqueproductIDs = []; %>
+            <% let productName = []; %>
+            <% for (item of ProCompRelation){ %>
+                <% if (item.ProductID == products[ix].ProductID && !uniqueproductIDs.includes(item.ProductID)){ %>
+
+                  <% uniqueproductIDs.push(item.ProductID); %>
+                  <% productName.push(products[ix].ProductName); %>
+                <% } %>
+            <% } %>
+              <li><%= productName %></li>
           <% } %>
+
+
+
+        </td>
+
+      <% } %>
       </tr>
       <nav>
     </table>
